@@ -1,0 +1,24 @@
+{
+    "os": "Linux-5.14.0-1054-oem-x86_64-with-glibc2.29",
+    "python": "3.8.10",
+    "heartbeatAt": "2022-12-07T12:07:37.141164",
+    "startedAt": "2022-12-07T12:07:36.578036",
+    "docker": null,
+    "gpu": "Quadro P2200",
+    "gpu_count": 1,
+    "cpu_count": 12,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "train_pg.py",
+    "codePath": "train_pg.py",
+    "git": {
+        "remote": "https://github.com/JereKnuutinen/Reinforcement_learning_project.git",
+        "commit": "d790cd6af5546f950124dfe96ea258886c1e5050"
+    },
+    "email": null,
+    "root": "/m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project",
+    "host": "kiwi",
+    "username": "korhonj19",
+    "executable": "/m/home/home4/44/korhonj19/unix/rl_course/venv/bin/python3"
+}

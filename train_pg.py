@@ -93,7 +93,7 @@ def test(agent, env, num_episodes=10):
 
 
 # The main function
-@hydra.main(config_path='cfg', config_name='ex5_cfg')
+@hydra.main(config_path='configs', config_name='hopper_medium')
 def main(cfg):
 
     # Set seed for random number generators
@@ -122,7 +122,7 @@ def main(cfg):
 
     # Create the gym env
     # env = gym.make(cfg.env_name, render_mode='rgb_array' if cfg.save_video else None)
-    env = create_env(config_file_name="/u/44/korhonj19/unix/rl_course/Reinforcement_learning_project/configs/hopper_medium.yaml", seed=20)
+    env = create_env(config_file_name="hopper_medium", seed=cfg.seed)
     # Set env random seed
     env.seed(cfg.seed)
 

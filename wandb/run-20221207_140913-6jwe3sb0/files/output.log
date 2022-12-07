@@ -1,0 +1,8 @@
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "train_pg.py", line 125, in main
+    env = create_env(config_file_name="configs/hopper_medium", seed=cfg.seed)
+  File "/m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/make_env.py", line 15, in create_env
+    config = yaml.load(open(f'./configs/{config_file_name}.yaml', 'r'),  Loader=yaml.Loader)
+FileNotFoundError: [Errno 2] No such file or directory: './configs/configs/hopper_medium.yaml'
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
