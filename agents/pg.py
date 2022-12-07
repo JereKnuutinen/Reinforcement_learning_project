@@ -35,8 +35,8 @@ class Policy(nn.Module):
         # TODO: Task 2: Implement actor_logstd as a learnable parameter
         # Use log of std to make sure std doesn't become negative during training
         self.actor_logstd = 0
-        #self.actor_logstd = torch.zeros(1, action_dim, device=device)
-        #self.actor_logstd = nn.Parameter(torch.zeros(1, action_dim))
+        self.actor_logstd = torch.zeros(1, action_dim, device=device)
+        self.actor_logstd = nn.Parameter(torch.zeros(1, action_dim))
 
     # Do a forward pass to map state to action
     def forward(self, state):
