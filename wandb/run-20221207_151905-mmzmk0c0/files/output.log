@@ -1,0 +1,36 @@
+
+{'ep': 0, 'q': -0.08636937290430069, 'timesteps': 28, 'ep_reward': 45.35060808614953}
+{'ep': 100, 'q': 2.3004863262176514, 'timesteps': 28, 'ep_reward': 45.180600774079174}
+{'ep': 200, 'q': 2.931056499481201, 'timesteps': 7, 'ep_reward': 2.2046545758240272}
+{'ep': 300, 'q': 3.2326200008392334, 'timesteps': 7, 'ep_reward': 2.3859647899746577}
+{'ep': 400, 'q': 3.54288387298584, 'timesteps': 7, 'ep_reward': 2.5239258848538473}
+{'ep': 500, 'q': 3.7027692794799805, 'timesteps': 7, 'ep_reward': 4.532373780150877}
+{'ep': 600, 'q': 4.052141189575195, 'timesteps': 7, 'ep_reward': 2.1880889750150843}
+{'ep': 700, 'q': 3.8469057083129883, 'timesteps': 7, 'ep_reward': 2.5997089730691543}
+{'ep': 800, 'q': 4.839073181152344, 'timesteps': 29, 'ep_reward': 42.92548681712953}
+{'ep': 900, 'q': 5.110780715942383, 'timesteps': 23, 'ep_reward': 36.87472706377097}
+{'ep': 1000, 'q': 6.488639831542969, 'timesteps': 27, 'ep_reward': 36.57797665235159}
+{'ep': 1100, 'q': 6.669384479522705, 'timesteps': 29, 'ep_reward': 41.16725382021985}
+{'ep': 1200, 'q': 7.540882110595703, 'timesteps': 32, 'ep_reward': 48.5129770543849}
+{'ep': 1300, 'q': 8.638086318969727, 'timesteps': 44, 'ep_reward': 67.97710549440828}
+{'ep': 1400, 'q': 9.079374313354492, 'timesteps': 38, 'ep_reward': 58.65080420812464}
+{'ep': 1500, 'q': 9.972625732421875, 'timesteps': 39, 'ep_reward': 60.66671704717246}
+{'ep': 1600, 'q': 10.665732383728027, 'timesteps': 45, 'ep_reward': 74.77208948459722}
+{'ep': 1700, 'q': 11.595234870910645, 'timesteps': 45, 'ep_reward': 75.13347139821046}
+{'ep': 1800, 'q': 12.786352157592773, 'timesteps': 49, 'ep_reward': 84.0706601135593}
+{'ep': 1900, 'q': 13.532022476196289, 'timesteps': 53, 'ep_reward': 90.17349235417113}
+{'ep': 2000, 'q': 14.657367706298828, 'timesteps': 128, 'ep_reward': 320.9974035294902}
+Error executing job with overrides: ['agent_name=ddpg']
+Traceback (most recent call last):
+  File "train_ddpg_pg_ac.py", line 157, in main
+    agent.save(cfg.model_path)
+  File "/m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/agents/ddpg.py", line 200, in save
+    torch.save(self.pi.state_dict(), f'{filepath}/actor.pt')
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/torch/serialization.py", line 377, in save
+    with _open_file_like(f, 'wb') as opened_file:
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/torch/serialization.py", line 231, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/torch/serialization.py", line 212, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: '/m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/results/Hopper-v4/model/Hopper-v4_params.pt/actor.pt'
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

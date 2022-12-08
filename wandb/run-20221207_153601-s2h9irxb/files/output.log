@@ -1,0 +1,127 @@
+
+{'ep': 0, 'q': -0.08636937290430069, 'timesteps': 28, 'ep_reward': 45.35060808614953}
+{'ep': 100, 'q': 1.7832489013671875, 'timesteps': 28, 'ep_reward': 45.180600774079174}
+{'ep': 200, 'q': 1.9443011283874512, 'timesteps': 7, 'ep_reward': 2.2984082999145135}
+{'ep': 300, 'q': 1.885271430015564, 'timesteps': 8, 'ep_reward': 2.6164789334754435}
+{'ep': 400, 'q': 1.6399917602539062, 'timesteps': 26, 'ep_reward': 39.26038766958356}
+{'ep': 500, 'q': 1.6530332565307617, 'timesteps': 20, 'ep_reward': -2.6463998432375098}
+{'ep': 600, 'q': 1.530725121498108, 'timesteps': 17, 'ep_reward': -0.91920785743255}
+{'ep': 700, 'q': 1.457655429840088, 'timesteps': 19, 'ep_reward': -1.765123542965866}
+{'ep': 800, 'q': 1.1886146068572998, 'timesteps': 20, 'ep_reward': -1.5704134204762208}
+{'ep': 900, 'q': 1.2685754299163818, 'timesteps': 24, 'ep_reward': 1.598508448857596}
+{'ep': 1000, 'q': 1.4557520151138306, 'timesteps': 28, 'ep_reward': 3.9662233906587265}
+{'ep': 1100, 'q': 0.9433144927024841, 'timesteps': 29, 'ep_reward': 3.4433493163100417}
+{'ep': 1200, 'q': 1.309697151184082, 'timesteps': 30, 'ep_reward': 3.8169316416960353}
+{'ep': 1300, 'q': 1.3074352741241455, 'timesteps': 25, 'ep_reward': 1.1418061713791714}
+{'ep': 1400, 'q': 1.0694091320037842, 'timesteps': 36, 'ep_reward': 6.903197591823942}
+{'ep': 1500, 'q': 1.3038963079452515, 'timesteps': 52, 'ep_reward': 21.022196311504334}
+{'ep': 1600, 'q': 1.2357152700424194, 'timesteps': 52, 'ep_reward': 25.370001675703406}
+{'ep': 1700, 'q': 1.1675260066986084, 'timesteps': 72, 'ep_reward': 40.86960340900069}
+{'ep': 1800, 'q': 1.3700417280197144, 'timesteps': 82, 'ep_reward': 49.78891035624836}
+{'ep': 1900, 'q': 1.6336073875427246, 'timesteps': 26, 'ep_reward': 42.41655952660153}
+{'ep': 2000, 'q': 1.6513400077819824, 'timesteps': 45, 'ep_reward': 69.14734444233}
+{'ep': 2100, 'q': 1.9464555978775024, 'timesteps': 28, 'ep_reward': 46.17940950815226}
+{'ep': 2200, 'q': 1.9351928234100342, 'timesteps': 37, 'ep_reward': 46.9563461783279}
+{'ep': 2300, 'q': 2.2022132873535156, 'timesteps': 43, 'ep_reward': 51.48577820974357}
+{'ep': 2400, 'q': 2.4125404357910156, 'timesteps': 29, 'ep_reward': 45.77792713777034}
+{'ep': 2500, 'q': 2.7588553428649902, 'timesteps': 36, 'ep_reward': 46.397854809031244}
+{'ep': 2600, 'q': 2.3706822395324707, 'timesteps': 35, 'ep_reward': 46.95559678099668}
+{'ep': 2700, 'q': 2.8295633792877197, 'timesteps': 33, 'ep_reward': 47.691122098163106}
+{'ep': 2800, 'q': 3.04701566696167, 'timesteps': 26, 'ep_reward': 42.166697254347945}
+{'ep': 2900, 'q': 2.9133005142211914, 'timesteps': 39, 'ep_reward': 65.03633706133454}
+{'ep': 3000, 'q': 3.219801425933838, 'timesteps': 32, 'ep_reward': 46.94735092026541}
+{'ep': 3100, 'q': 3.4848170280456543, 'timesteps': 30, 'ep_reward': 48.48086413356586}
+{'ep': 3200, 'q': 3.9825363159179688, 'timesteps': 27, 'ep_reward': 43.96110845050573}
+{'ep': 3300, 'q': 4.276710033416748, 'timesteps': 68, 'ep_reward': 120.97705012751545}
+{'ep': 3400, 'q': 4.578547477722168, 'timesteps': 66, 'ep_reward': 125.90988052098399}
+{'ep': 3500, 'q': 5.026463031768799, 'timesteps': 59, 'ep_reward': 110.1192551675219}
+{'ep': 3600, 'q': 5.458974361419678, 'timesteps': 61, 'ep_reward': 114.43349784601332}
+{'ep': 3700, 'q': 5.847886085510254, 'timesteps': 87, 'ep_reward': 181.32558803899443}
+{'ep': 3800, 'q': 6.354435920715332, 'timesteps': 82, 'ep_reward': 151.87084419024637}
+{'ep': 3900, 'q': 6.35398530960083, 'timesteps': 90, 'ep_reward': 179.7093100113048}
+{'ep': 4000, 'q': 6.933596611022949, 'timesteps': 82, 'ep_reward': 149.4872267553917}
+{'ep': 4100, 'q': 6.79475212097168, 'timesteps': 83, 'ep_reward': 152.41163865869171}
+{'ep': 4200, 'q': 7.112814903259277, 'timesteps': 81, 'ep_reward': 148.71373276140824}
+{'ep': 4300, 'q': 7.2357611656188965, 'timesteps': 84, 'ep_reward': 156.3008874524009}
+{'ep': 4400, 'q': 7.320651054382324, 'timesteps': 87, 'ep_reward': 159.59554460753836}
+{'ep': 4500, 'q': 7.543929100036621, 'timesteps': 87, 'ep_reward': 161.73458335503116}
+{'ep': 4600, 'q': 7.825854301452637, 'timesteps': 27, 'ep_reward': 46.37944411970335}
+{'ep': 4700, 'q': 7.746910572052002, 'timesteps': 69, 'ep_reward': 122.70223562271737}
+{'ep': 4800, 'q': 8.247920989990234, 'timesteps': 64, 'ep_reward': 113.74000212433144}
+{'ep': 4900, 'q': 8.194616317749023, 'timesteps': 27, 'ep_reward': 45.398171241021736}
+{'ep': 5000, 'q': 8.345380783081055, 'timesteps': 87, 'ep_reward': 167.8266521498082}
+{'ep': 5100, 'q': 8.469993591308594, 'timesteps': 66, 'ep_reward': 116.70570632702122}
+{'ep': 5200, 'q': 8.656371116638184, 'timesteps': 27, 'ep_reward': 45.37584000140428}
+{'ep': 5300, 'q': 8.646448135375977, 'timesteps': 28, 'ep_reward': 47.004152720815014}
+{'ep': 5400, 'q': 8.867626190185547, 'timesteps': 86, 'ep_reward': 160.96861728880197}
+{'ep': 5500, 'q': 9.013772964477539, 'timesteps': 86, 'ep_reward': 160.42226619012388}
+{'ep': 5600, 'q': 9.311835289001465, 'timesteps': 85, 'ep_reward': 156.81387796987823}
+{'ep': 5700, 'q': 9.28957748413086, 'timesteps': 86, 'ep_reward': 160.95096488001195}
+{'ep': 5800, 'q': 9.50931453704834, 'timesteps': 86, 'ep_reward': 161.27474044411343}
+{'ep': 5900, 'q': 9.702154159545898, 'timesteps': 69, 'ep_reward': 122.58811617190692}
+{'ep': 6000, 'q': 9.795976638793945, 'timesteps': 59, 'ep_reward': 104.56561432118453}
+{'ep': 6100, 'q': 9.911947250366211, 'timesteps': 71, 'ep_reward': 129.36684526793601}
+{'ep': 6200, 'q': 10.060659408569336, 'timesteps': 63, 'ep_reward': 112.38473894909721}
+{'ep': 6300, 'q': 10.312276840209961, 'timesteps': 69, 'ep_reward': 124.87358384849777}
+{'ep': 6400, 'q': 10.1696195602417, 'timesteps': 67, 'ep_reward': 120.09420741602601}
+{'ep': 6500, 'q': 10.378015518188477, 'timesteps': 78, 'ep_reward': 144.15926659186812}
+{'ep': 6600, 'q': 10.566814422607422, 'timesteps': 66, 'ep_reward': 118.10033921727734}
+{'ep': 6700, 'q': 10.661377906799316, 'timesteps': 76, 'ep_reward': 137.57917090696083}
+{'ep': 6800, 'q': 11.004112243652344, 'timesteps': 88, 'ep_reward': 171.03608458978692}
+{'ep': 6900, 'q': 11.467016220092773, 'timesteps': 70, 'ep_reward': 126.6650178811878}
+{'ep': 7000, 'q': 11.810863494873047, 'timesteps': 87, 'ep_reward': 168.3120270614485}
+{'ep': 7100, 'q': 11.712236404418945, 'timesteps': 71, 'ep_reward': 128.59032502380475}
+{'ep': 7200, 'q': 11.687421798706055, 'timesteps': 73, 'ep_reward': 133.7871505525251}
+{'ep': 7300, 'q': 12.379682540893555, 'timesteps': 70, 'ep_reward': 128.66255756151872}
+{'ep': 7400, 'q': 12.197856903076172, 'timesteps': 72, 'ep_reward': 134.5106305747992}
+{'ep': 7500, 'q': 12.77273941040039, 'timesteps': 72, 'ep_reward': 135.98880363556066}
+{'ep': 7600, 'q': 12.464187622070312, 'timesteps': 77, 'ep_reward': 147.3350868604484}
+{'ep': 7700, 'q': 12.476344108581543, 'timesteps': 86, 'ep_reward': 163.10265412210464}
+{'ep': 7800, 'q': 13.282573699951172, 'timesteps': 80, 'ep_reward': 150.5742692304477}
+{'ep': 7900, 'q': 13.120135307312012, 'timesteps': 84, 'ep_reward': 158.79120765732287}
+{'ep': 8000, 'q': 13.230388641357422, 'timesteps': 83, 'ep_reward': 159.96579161429557}
+{'ep': 8100, 'q': 13.399779319763184, 'timesteps': 63, 'ep_reward': 112.08880797897328}
+{'ep': 8200, 'q': 13.581533432006836, 'timesteps': 82, 'ep_reward': 154.01138852965974}
+{'ep': 8300, 'q': 13.890125274658203, 'timesteps': 66, 'ep_reward': 121.9910425933244}
+{'ep': 8400, 'q': 14.070858001708984, 'timesteps': 106, 'ep_reward': 244.1485257368048}
+{'ep': 8500, 'q': 14.788688659667969, 'timesteps': 68, 'ep_reward': 119.7228215965918}
+Traceback (most recent call last):
+  File "train_ddpg_pg_ac.py", line 173, in <module>
+    main()
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/main.py", line 90, in decorated_main
+    _run_hydra(
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/_internal/utils.py", line 389, in _run_hydra
+    _run_app(
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/_internal/utils.py", line 452, in _run_app
+    run_and_report(
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/_internal/utils.py", line 213, in run_and_report
+    return func()
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/_internal/utils.py", line 453, in <lambda>
+    lambda: hydra.run(
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "train_ddpg_pg_ac.py", line 146, in main
+    train_info = train(agent, env)
+  File "train_ddpg_pg_ac.py", line 38, in train
+    next_obs, reward, done, _ = env.step(to_numpy(action))
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/gym/wrappers/record_video.py", line 176, in step
+    self.start_video_recorder()
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/gym/wrappers/record_video.py", line 128, in start_video_recorder
+    self.video_recorder.capture_frame()
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/gym/wrappers/monitoring/video_recorder.py", line 217, in capture_frame
+    self._encode_image_frame(frame)
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/gym/wrappers/monitoring/video_recorder.py", line 283, in _encode_image_frame
+    self.metadata["encoder_version"] = self.encoder.version_info
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/gym/wrappers/monitoring/video_recorder.py", line 449, in version_info
+    subprocess.check_output(
+  File "/usr/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.8/subprocess.py", line 493, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/usr/lib/python3.8/subprocess.py", line 858, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.8/subprocess.py", line 1660, in _execute_child
+    part = os.read(errpipe_read, 50000)
+KeyboardInterrupt

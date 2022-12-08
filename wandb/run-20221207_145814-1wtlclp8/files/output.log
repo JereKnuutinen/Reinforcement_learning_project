@@ -1,0 +1,40 @@
+Error executing job with overrides: ['agent_name=ddpg']
+An error occurred during Hydra's exception formatting:
+AssertionError()
+Traceback (most recent call last):
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/_internal/utils.py", line 254, in run_and_report
+    assert mdl is not None
+AssertionError
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "train_ddpg_pg_ac.py", line 173, in <module>
+    main()
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/main.py", line 90, in decorated_main
+    _run_hydra(
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/_internal/utils.py", line 389, in _run_hydra
+    _run_app(
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/_internal/utils.py", line 452, in _run_app
+    run_and_report(
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/_internal/utils.py", line 296, in run_and_report
+    raise ex
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/_internal/utils.py", line 213, in run_and_report
+    return func()
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/_internal/utils.py", line 453, in <lambda>
+    lambda: hydra.run(
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/_internal/hydra.py", line 132, in run
+    _ = ret.return_value
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/core/utils.py", line 260, in return_value
+    raise self._return_value
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "train_ddpg_pg_ac.py", line 146, in main
+    train_info = train(agent, env)
+  File "train_ddpg_pg_ac.py", line 58, in train
+    info = agent.update()
+  File "/m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/agents/ddpg.py", line 107, in update
+    batch = self.buffer.sample(self.batch_size, device=device)
+  File "/m/home/home4/44/korhonj19/unix/rl_course/common/buffer.py", line 45, in sample
+    ind = np.random.randint(0, self.size, size=batch_size)
+  File "mtrand.pyx", line 748, in numpy.random.mtrand.RandomState.randint
+  File "_bounded_integers.pyx", line 1256, in numpy.random._bounded_integers._rand_int64
+TypeError: 'float' object cannot be interpreted as an integer

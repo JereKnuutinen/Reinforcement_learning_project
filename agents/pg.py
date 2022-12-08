@@ -63,7 +63,7 @@ class PG(object):
         self.policy = Policy(state_dim, action_dim).to(device)
 
         # Create an optimizer
-        self.optimizer = torch.optim.Adam(self.policy.parameters(), lr=lr)
+        self.optimizer = torch.optim.Adam(self.policy.parameters(), lr=lr, betas=0.9)
 
         # Set discount factor value
         self.gamma = gamma

@@ -1,0 +1,8 @@
+Error executing job with overrides: ['agent_name=ddpg']
+Traceback (most recent call last):
+  File "train_ddpg_pg_ac.py", line 140, in main
+    agent = DDPG(state_shape, action_dim, max_action,
+  File "/m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/agents/ddpg.py", line 76, in __init__
+    self.noise = h.OUActionNoise(mu=np.zeros((action_dim,)))
+AttributeError: module 'common.helper' has no attribute 'OUActionNoise'
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

@@ -2,13 +2,23 @@ env_name: 'Hopper-v4'
 env_parameters:
   ctrl_cost_weight: 0.075
 
+# for ddpg (exercise 6)
+agent_name: ddpg    
+
+train_episodes: 10000
+gamma: 0.99
+actor_lr: 1e-4
+critic_lr: 1e-3
+tau: 1e-3
+batch_size: 256
+buffer_size: 1e5
+#############
+
+
 seed: 408
 exp_name: hopper_medium
 run_id: ??? # decided during execution
-
-train_episodes: 2000
-gamma: 0.99
-lr: 2e-3
+lr: 2e-4
 
 testing: false
 model_path: default

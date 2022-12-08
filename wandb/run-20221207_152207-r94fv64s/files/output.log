@@ -1,0 +1,144 @@
+
+{'ep': 0, 'q': -0.08636937290430069, 'timesteps': 28, 'ep_reward': 45.35060808614953}
+{'ep': 100, 'q': 2.3004863262176514, 'timesteps': 28, 'ep_reward': 45.180600774079174}
+{'ep': 200, 'q': 2.931056499481201, 'timesteps': 7, 'ep_reward': 2.2046545758240272}
+{'ep': 300, 'q': 3.2326200008392334, 'timesteps': 7, 'ep_reward': 2.3859647899746577}
+{'ep': 400, 'q': 3.54288387298584, 'timesteps': 7, 'ep_reward': 2.5239258848538473}
+{'ep': 500, 'q': 3.7027692794799805, 'timesteps': 7, 'ep_reward': 4.532373780150877}
+{'ep': 600, 'q': 4.052141189575195, 'timesteps': 7, 'ep_reward': 2.1880889750150843}
+{'ep': 700, 'q': 3.8469057083129883, 'timesteps': 7, 'ep_reward': 2.5997089730691543}
+{'ep': 800, 'q': 4.839073181152344, 'timesteps': 29, 'ep_reward': 42.92548681712953}
+{'ep': 900, 'q': 5.110780715942383, 'timesteps': 23, 'ep_reward': 36.87472706377097}
+{'ep': 1000, 'q': 6.488639831542969, 'timesteps': 27, 'ep_reward': 36.57797665235159}
+{'ep': 1100, 'q': 6.669384479522705, 'timesteps': 29, 'ep_reward': 41.16725382021985}
+{'ep': 1200, 'q': 7.540882110595703, 'timesteps': 32, 'ep_reward': 48.5129770543849}
+{'ep': 1300, 'q': 8.638086318969727, 'timesteps': 44, 'ep_reward': 67.97710549440828}
+{'ep': 1400, 'q': 9.079374313354492, 'timesteps': 38, 'ep_reward': 58.65080420812464}
+{'ep': 1500, 'q': 9.972625732421875, 'timesteps': 39, 'ep_reward': 60.66671704717246}
+{'ep': 1600, 'q': 10.665732383728027, 'timesteps': 45, 'ep_reward': 74.77208948459722}
+{'ep': 1700, 'q': 11.595234870910645, 'timesteps': 45, 'ep_reward': 75.13347139821046}
+{'ep': 1800, 'q': 12.786352157592773, 'timesteps': 49, 'ep_reward': 84.0706601135593}
+{'ep': 1900, 'q': 13.532022476196289, 'timesteps': 53, 'ep_reward': 90.17349235417113}
+{'ep': 2000, 'q': 14.657367706298828, 'timesteps': 128, 'ep_reward': 320.9974035294902}
+{'ep': 2100, 'q': 15.156412124633789, 'timesteps': 97, 'ep_reward': 207.4018965717472}
+{'ep': 2200, 'q': 16.533042907714844, 'timesteps': 51, 'ep_reward': 84.21043575238451}
+{'ep': 2300, 'q': 17.862945556640625, 'timesteps': 145, 'ep_reward': 410.32850932864295}
+{'ep': 2400, 'q': 18.44350242614746, 'timesteps': 98, 'ep_reward': 211.17038315710727}
+{'ep': 2500, 'q': 19.356666564941406, 'timesteps': 138, 'ep_reward': 369.1432586350825}
+{'ep': 2600, 'q': 20.231882095336914, 'timesteps': 149, 'ep_reward': 401.6332474285617}
+{'ep': 2700, 'q': 21.777355194091797, 'timesteps': 104, 'ep_reward': 234.14113366764883}
+{'ep': 2800, 'q': 21.631576538085938, 'timesteps': 103, 'ep_reward': 216.77484364676482}
+{'ep': 2900, 'q': 24.12741470336914, 'timesteps': 104, 'ep_reward': 212.04619257795497}
+{'ep': 3000, 'q': 24.90351676940918, 'timesteps': 120, 'ep_reward': 270.6985362851359}
+{'ep': 3100, 'q': 26.749544143676758, 'timesteps': 94, 'ep_reward': 179.0605097522505}
+{'ep': 3200, 'q': 27.390108108520508, 'timesteps': 117, 'ep_reward': 252.55878527244528}
+{'ep': 3300, 'q': 29.54277229309082, 'timesteps': 114, 'ep_reward': 239.4793688072638}
+{'ep': 3400, 'q': 29.317310333251953, 'timesteps': 121, 'ep_reward': 260.9148552147763}
+{'ep': 3500, 'q': 29.94200897216797, 'timesteps': 144, 'ep_reward': 358.98805859201184}
+{'ep': 3600, 'q': 32.0645637512207, 'timesteps': 190, 'ep_reward': 522.7487418966684}
+{'ep': 3700, 'q': 33.10614776611328, 'timesteps': 169, 'ep_reward': 509.8295489977679}
+{'ep': 3800, 'q': 34.0317268371582, 'timesteps': 167, 'ep_reward': 524.0983703169745}
+{'ep': 3900, 'q': 35.28105926513672, 'timesteps': 142, 'ep_reward': 340.40463353257195}
+{'ep': 4000, 'q': 36.57020568847656, 'timesteps': 167, 'ep_reward': 516.182677692606}
+{'ep': 4100, 'q': 38.89260482788086, 'timesteps': 140, 'ep_reward': 338.9859545853543}
+{'ep': 4200, 'q': 40.17832565307617, 'timesteps': 30, 'ep_reward': 41.638254299585455}
+{'ep': 4300, 'q': 39.82903289794922, 'timesteps': 142, 'ep_reward': 314.18602901691327}
+{'ep': 4400, 'q': 41.06647491455078, 'timesteps': 127, 'ep_reward': 311.5650065196882}
+{'ep': 4500, 'q': 43.30632781982422, 'timesteps': 127, 'ep_reward': 309.67616612546266}
+{'ep': 4600, 'q': 43.05137252807617, 'timesteps': 107, 'ep_reward': 217.28147814699776}
+{'ep': 4700, 'q': 45.4799919128418, 'timesteps': 144, 'ep_reward': 329.01498801292075}
+{'ep': 4800, 'q': 46.90110778808594, 'timesteps': 128, 'ep_reward': 299.5421256559719}
+{'ep': 4900, 'q': 48.56360626220703, 'timesteps': 159, 'ep_reward': 414.1307246462334}
+{'ep': 5000, 'q': 48.38277053833008, 'timesteps': 153, 'ep_reward': 375.2010365253132}
+{'ep': 5100, 'q': 51.8694953918457, 'timesteps': 110, 'ep_reward': 223.17578725330984}
+{'ep': 5200, 'q': 49.82819366455078, 'timesteps': 148, 'ep_reward': 374.9466211726586}
+{'ep': 5300, 'q': 52.535377502441406, 'timesteps': 113, 'ep_reward': 229.15889529801444}
+{'ep': 5400, 'q': 51.68804168701172, 'timesteps': 110, 'ep_reward': 222.34472729061255}
+{'ep': 5500, 'q': 53.007347106933594, 'timesteps': 123, 'ep_reward': 264.7184760745453}
+{'ep': 5600, 'q': 56.84577941894531, 'timesteps': 110, 'ep_reward': 223.61663122839408}
+{'ep': 5700, 'q': 57.55732727050781, 'timesteps': 136, 'ep_reward': 331.73742518230017}
+{'ep': 5800, 'q': 56.52238464355469, 'timesteps': 134, 'ep_reward': 308.4433304331516}
+{'ep': 5900, 'q': 58.03899002075195, 'timesteps': 139, 'ep_reward': 320.0842600215765}
+{'ep': 6000, 'q': 60.1219482421875, 'timesteps': 109, 'ep_reward': 222.5399972806142}
+{'ep': 6100, 'q': 59.987953186035156, 'timesteps': 111, 'ep_reward': 226.56756032388472}
+{'ep': 6200, 'q': 61.15149688720703, 'timesteps': 103, 'ep_reward': 209.8561544570262}
+{'ep': 6300, 'q': 58.996063232421875, 'timesteps': 132, 'ep_reward': 316.5247260694363}
+{'ep': 6400, 'q': 62.90205764770508, 'timesteps': 127, 'ep_reward': 287.19717596073633}
+{'ep': 6500, 'q': 64.00794219970703, 'timesteps': 159, 'ep_reward': 406.00433242675166}
+{'ep': 6600, 'q': 63.03955841064453, 'timesteps': 124, 'ep_reward': 304.41473417306474}
+{'ep': 6700, 'q': 65.03041076660156, 'timesteps': 141, 'ep_reward': 337.68809136069416}
+{'ep': 6800, 'q': 66.81880187988281, 'timesteps': 124, 'ep_reward': 253.3679056673184}
+{'ep': 6900, 'q': 68.53997802734375, 'timesteps': 111, 'ep_reward': 224.00825467348366}
+{'ep': 7000, 'q': 66.76020812988281, 'timesteps': 113, 'ep_reward': 228.3661903514777}
+{'ep': 7100, 'q': 68.66911315917969, 'timesteps': 136, 'ep_reward': 335.8717440449976}
+{'ep': 7200, 'q': 69.06430053710938, 'timesteps': 144, 'ep_reward': 355.38028971646617}
+{'ep': 7300, 'q': 71.72937774658203, 'timesteps': 108, 'ep_reward': 220.3880919809901}
+{'ep': 7400, 'q': 72.9643325805664, 'timesteps': 110, 'ep_reward': 230.38532119608902}
+{'ep': 7500, 'q': 73.44346618652344, 'timesteps': 134, 'ep_reward': 341.7914756744103}
+{'ep': 7600, 'q': 71.72935485839844, 'timesteps': 129, 'ep_reward': 325.929901462153}
+{'ep': 7700, 'q': 73.29740142822266, 'timesteps': 146, 'ep_reward': 369.71544653322627}
+{'ep': 7800, 'q': 76.26603698730469, 'timesteps': 131, 'ep_reward': 330.43867394146315}
+{'ep': 7900, 'q': 75.84616088867188, 'timesteps': 131, 'ep_reward': 332.36012334863995}
+{'ep': 8000, 'q': 79.08329010009766, 'timesteps': 122, 'ep_reward': 289.52436076696875}
+{'ep': 8100, 'q': 77.77580261230469, 'timesteps': 120, 'ep_reward': 282.37167932338514}
+{'ep': 8200, 'q': 80.77822875976562, 'timesteps': 130, 'ep_reward': 318.4189591818755}
+{'ep': 8300, 'q': 79.7113037109375, 'timesteps': 114, 'ep_reward': 277.15510923060947}
+{'ep': 8400, 'q': 84.34092712402344, 'timesteps': 113, 'ep_reward': 233.18889859060724}
+{'ep': 8500, 'q': 83.03585052490234, 'timesteps': 111, 'ep_reward': 245.59666322817606}
+{'ep': 8600, 'q': 83.59445190429688, 'timesteps': 124, 'ep_reward': 306.7060734207708}
+{'ep': 8700, 'q': 82.3857192993164, 'timesteps': 117, 'ep_reward': 247.38691593312518}
+{'ep': 8800, 'q': 86.77665710449219, 'timesteps': 123, 'ep_reward': 280.5836076665142}
+{'ep': 8900, 'q': 89.1275634765625, 'timesteps': 120, 'ep_reward': 274.7239657051395}
+{'ep': 9000, 'q': 85.95559692382812, 'timesteps': 109, 'ep_reward': 212.66365649507392}
+{'ep': 9100, 'q': 88.94332122802734, 'timesteps': 121, 'ep_reward': 279.5197471772909}
+{'ep': 9200, 'q': 92.27151489257812, 'timesteps': 123, 'ep_reward': 290.59499559016575}
+{'ep': 9300, 'q': 89.82073974609375, 'timesteps': 118, 'ep_reward': 270.43441542334176}
+{'ep': 9400, 'q': 89.57365417480469, 'timesteps': 113, 'ep_reward': 275.0917518886259}
+{'ep': 9500, 'q': 90.95074462890625, 'timesteps': 110, 'ep_reward': 229.05696336819634}
+{'ep': 9600, 'q': 96.33128356933594, 'timesteps': 114, 'ep_reward': 270.06995266519743}
+{'ep': 9700, 'q': 93.20335388183594, 'timesteps': 111, 'ep_reward': 211.97558584799688}
+{'ep': 9800, 'q': 96.06375122070312, 'timesteps': 116, 'ep_reward': 228.09485441950315}
+{'ep': 9900, 'q': 95.87065124511719, 'timesteps': 100, 'ep_reward': 187.89846676489293}
+{'ep': 10000, 'q': 96.31604766845703, 'timesteps': 103, 'ep_reward': 196.89953005235495}
+{'ep': 10100, 'q': 96.7388916015625, 'timesteps': 102, 'ep_reward': 196.98380127356393}
+{'ep': 10200, 'q': 99.92095947265625, 'timesteps': 114, 'ep_reward': 225.2028856303413}
+{'ep': 10300, 'q': 100.26046752929688, 'timesteps': 113, 'ep_reward': 220.6929223185237}
+{'ep': 10400, 'q': 100.8276138305664, 'timesteps': 138, 'ep_reward': 297.43453765040533}
+Traceback (most recent call last):
+  File "train_ddpg_pg_ac.py", line 173, in <module>
+    main()
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/main.py", line 90, in decorated_main
+    _run_hydra(
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/_internal/utils.py", line 389, in _run_hydra
+    _run_app(
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/_internal/utils.py", line 452, in _run_app
+    run_and_report(
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/_internal/utils.py", line 213, in run_and_report
+    return func()
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/_internal/utils.py", line 453, in <lambda>
+    lambda: hydra.run(
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "train_ddpg_pg_ac.py", line 146, in main
+    train_info = train(agent, env)
+  File "train_ddpg_pg_ac.py", line 35, in train
+    action, act_logprob = agent.get_action(obs)
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/agents/ddpg.py", line 177, in get_action
+    action = self.pi(x)
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/agents/ddpg.py", line 27, in forward
+    return self.max_action * torch.tanh(self.actor(state))
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/m/home/home4/44/korhonj19/unix/rl_course/venv/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 103, in forward
+    return F.linear(input, self.weight, self.bias)
+KeyboardInterrupt

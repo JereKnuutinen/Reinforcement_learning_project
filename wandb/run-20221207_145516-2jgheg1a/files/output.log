@@ -1,0 +1,8 @@
+Error executing job with overrides: ['agent_name=ddpg']
+Traceback (most recent call last):
+  File "train_ddpg_pg_ac.py", line 141, in main
+    cfg.lr, cfg.gamma, cfg.tau, cfg.batch_size, cfg.buffer_size)
+omegaconf.errors.ConfigAttributeError: Key 'tau' is not in struct
+    full_key: tau
+    object_type=dict
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

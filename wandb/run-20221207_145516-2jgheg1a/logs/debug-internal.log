@@ -1,0 +1,157 @@
+2022-12-07 14:55:16,863 INFO    StreamThr :36578 [internal.py:wandb_internal():90] W&B internal server running at pid: 36578, started at: 2022-12-07 14:55:16.861202
+2022-12-07 14:55:16,864 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: status
+2022-12-07 14:55:16,867 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: status
+2022-12-07 14:55:16,868 INFO    WriterThread:36578 [datastore.py:open_for_write():75] open: /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/run-2jgheg1a.wandb
+2022-12-07 14:55:16,868 DEBUG   SenderThread:36578 [sender.py:send():302] send: header
+2022-12-07 14:55:16,869 DEBUG   SenderThread:36578 [sender.py:send():302] send: run
+2022-12-07 14:55:17,325 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: check_version
+2022-12-07 14:55:17,336 INFO    SenderThread:36578 [dir_watcher.py:__init__():216] watching files in: /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/files
+2022-12-07 14:55:17,336 INFO    SenderThread:36578 [sender.py:_start_run_threads():913] run started: 2jgheg1a with start time 1670417716.834089
+2022-12-07 14:55:17,336 DEBUG   SenderThread:36578 [sender.py:send():302] send: summary
+2022-12-07 14:55:17,340 INFO    SenderThread:36578 [sender.py:_save_file():1156] saving file wandb-summary.json with policy end
+2022-12-07 14:55:17,340 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: check_version
+2022-12-07 14:55:17,381 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: run_start
+2022-12-07 14:55:17,383 DEBUG   HandlerThread:36578 [meta.py:__init__():35] meta init
+2022-12-07 14:55:17,383 DEBUG   HandlerThread:36578 [meta.py:__init__():50] meta init done
+2022-12-07 14:55:17,384 DEBUG   HandlerThread:36578 [meta.py:probe():216] probe
+2022-12-07 14:55:17,391 DEBUG   HandlerThread:36578 [meta.py:_setup_git():206] setup git
+2022-12-07 14:55:17,416 DEBUG   HandlerThread:36578 [meta.py:_setup_git():213] setup git done
+2022-12-07 14:55:17,417 DEBUG   HandlerThread:36578 [meta.py:_save_pip():54] save pip
+2022-12-07 14:55:17,420 DEBUG   HandlerThread:36578 [meta.py:_save_pip():68] save pip done
+2022-12-07 14:55:17,420 DEBUG   HandlerThread:36578 [meta.py:probe():254] probe done
+2022-12-07 14:55:17,432 DEBUG   SenderThread:36578 [sender.py:send():302] send: files
+2022-12-07 14:55:17,432 INFO    SenderThread:36578 [sender.py:_save_file():1156] saving file wandb-metadata.json with policy now
+2022-12-07 14:55:17,443 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: stop_status
+2022-12-07 14:55:17,444 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: stop_status
+2022-12-07 14:55:17,636 DEBUG   SenderThread:36578 [sender.py:send():302] send: telemetry
+2022-12-07 14:55:17,714 DEBUG   SenderThread:36578 [sender.py:send():302] send: exit
+2022-12-07 14:55:17,715 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-07 14:55:17,715 INFO    SenderThread:36578 [sender.py:send_exit():438] handling exit code: 1
+2022-12-07 14:55:17,716 INFO    SenderThread:36578 [sender.py:send_exit():440] handling runtime: 0
+2022-12-07 14:55:17,720 INFO    SenderThread:36578 [sender.py:_save_file():1156] saving file wandb-summary.json with policy end
+2022-12-07 14:55:17,720 INFO    SenderThread:36578 [sender.py:send_exit():446] send defer
+2022-12-07 14:55:17,720 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: poll_exit
+2022-12-07 14:55:17,721 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: defer
+2022-12-07 14:55:17,722 INFO    HandlerThread:36578 [handler.py:handle_request_defer():164] handle defer: 0
+2022-12-07 14:55:17,723 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: defer
+2022-12-07 14:55:17,723 INFO    SenderThread:36578 [sender.py:send_request_defer():455] handle sender defer: 0
+2022-12-07 14:55:17,724 INFO    SenderThread:36578 [sender.py:transition_state():459] send defer: 1
+2022-12-07 14:55:17,725 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: defer
+2022-12-07 14:55:17,725 INFO    HandlerThread:36578 [handler.py:handle_request_defer():164] handle defer: 1
+2022-12-07 14:55:17,812 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: defer
+2022-12-07 14:55:17,812 INFO    SenderThread:36578 [sender.py:send_request_defer():455] handle sender defer: 1
+2022-12-07 14:55:17,813 INFO    SenderThread:36578 [sender.py:transition_state():459] send defer: 2
+2022-12-07 14:55:17,814 DEBUG   SenderThread:36578 [sender.py:send():302] send: stats
+2022-12-07 14:55:17,814 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: defer
+2022-12-07 14:55:17,815 INFO    HandlerThread:36578 [handler.py:handle_request_defer():164] handle defer: 2
+2022-12-07 14:55:17,816 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: defer
+2022-12-07 14:55:17,817 INFO    SenderThread:36578 [sender.py:send_request_defer():455] handle sender defer: 2
+2022-12-07 14:55:17,818 INFO    SenderThread:36578 [sender.py:transition_state():459] send defer: 3
+2022-12-07 14:55:17,818 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: defer
+2022-12-07 14:55:17,819 INFO    HandlerThread:36578 [handler.py:handle_request_defer():164] handle defer: 3
+2022-12-07 14:55:17,820 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: defer
+2022-12-07 14:55:17,820 INFO    SenderThread:36578 [sender.py:send_request_defer():455] handle sender defer: 3
+2022-12-07 14:55:17,821 INFO    SenderThread:36578 [sender.py:transition_state():459] send defer: 4
+2022-12-07 14:55:17,822 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-07 14:55:17,823 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: defer
+2022-12-07 14:55:17,823 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: poll_exit
+2022-12-07 14:55:17,823 INFO    HandlerThread:36578 [handler.py:handle_request_defer():164] handle defer: 4
+2022-12-07 14:55:17,825 DEBUG   SenderThread:36578 [sender.py:send():302] send: summary
+2022-12-07 14:55:17,829 INFO    SenderThread:36578 [sender.py:_save_file():1156] saving file wandb-summary.json with policy end
+2022-12-07 14:55:17,829 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: defer
+2022-12-07 14:55:17,830 INFO    SenderThread:36578 [sender.py:send_request_defer():455] handle sender defer: 4
+2022-12-07 14:55:17,831 INFO    SenderThread:36578 [sender.py:transition_state():459] send defer: 5
+2022-12-07 14:55:17,832 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: defer
+2022-12-07 14:55:17,832 INFO    HandlerThread:36578 [handler.py:handle_request_defer():164] handle defer: 5
+2022-12-07 14:55:17,833 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: defer
+2022-12-07 14:55:17,833 INFO    SenderThread:36578 [sender.py:send_request_defer():455] handle sender defer: 5
+2022-12-07 14:55:17,925 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-07 14:55:18,033 INFO    Thread-16 :36578 [upload_job.py:push():138] Uploaded file /tmp/tmps48uneg2wandb/3h2lx8ho-wandb-metadata.json
+2022-12-07 14:55:18,069 INFO    SenderThread:36578 [sender.py:transition_state():459] send defer: 6
+2022-12-07 14:55:18,069 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: poll_exit
+2022-12-07 14:55:18,069 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: defer
+2022-12-07 14:55:18,070 INFO    HandlerThread:36578 [handler.py:handle_request_defer():164] handle defer: 6
+2022-12-07 14:55:18,071 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: defer
+2022-12-07 14:55:18,072 INFO    SenderThread:36578 [sender.py:send_request_defer():455] handle sender defer: 6
+2022-12-07 14:55:18,171 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-07 14:55:18,339 INFO    Thread-12 :36578 [dir_watcher.py:_on_file_modified():292] file/dir modified: /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/files/config.yaml
+2022-12-07 14:55:18,339 INFO    Thread-12 :36578 [dir_watcher.py:_on_file_created():275] file/dir created: /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/files/requirements.txt
+2022-12-07 14:55:18,340 INFO    Thread-12 :36578 [dir_watcher.py:_on_file_created():275] file/dir created: /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/files/wandb-metadata.json
+2022-12-07 14:55:18,341 INFO    Thread-12 :36578 [dir_watcher.py:_on_file_created():275] file/dir created: /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/files/wandb-summary.json
+2022-12-07 14:55:18,341 INFO    Thread-12 :36578 [dir_watcher.py:_on_file_created():275] file/dir created: /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/files/output.log
+2022-12-07 14:55:19,649 INFO    SenderThread:36578 [sender.py:transition_state():459] send defer: 7
+2022-12-07 14:55:19,649 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: poll_exit
+2022-12-07 14:55:19,650 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: defer
+2022-12-07 14:55:19,651 INFO    HandlerThread:36578 [handler.py:handle_request_defer():164] handle defer: 7
+2022-12-07 14:55:19,652 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: defer
+2022-12-07 14:55:19,653 INFO    SenderThread:36578 [sender.py:send_request_defer():455] handle sender defer: 7
+2022-12-07 14:55:19,654 INFO    SenderThread:36578 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-12-07 14:55:19,751 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-07 14:55:20,340 INFO    Thread-12 :36578 [dir_watcher.py:_on_file_modified():292] file/dir modified: /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/files/output.log
+2022-12-07 14:55:20,341 INFO    SenderThread:36578 [dir_watcher.py:finish():392] scan: /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/files
+2022-12-07 14:55:20,341 INFO    SenderThread:36578 [dir_watcher.py:finish():406] scan save: /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/files/config.yaml config.yaml
+2022-12-07 14:55:20,341 INFO    SenderThread:36578 [dir_watcher.py:finish():406] scan save: /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/files/wandb-summary.json wandb-summary.json
+2022-12-07 14:55:20,343 INFO    SenderThread:36578 [dir_watcher.py:finish():406] scan save: /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/files/requirements.txt requirements.txt
+2022-12-07 14:55:20,345 INFO    SenderThread:36578 [dir_watcher.py:finish():406] scan save: /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/files/wandb-metadata.json wandb-metadata.json
+2022-12-07 14:55:20,345 INFO    SenderThread:36578 [dir_watcher.py:finish():406] scan save: /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/files/output.log output.log
+2022-12-07 14:55:20,347 INFO    SenderThread:36578 [sender.py:transition_state():459] send defer: 8
+2022-12-07 14:55:20,347 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: poll_exit
+2022-12-07 14:55:20,347 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: defer
+2022-12-07 14:55:20,350 INFO    HandlerThread:36578 [handler.py:handle_request_defer():164] handle defer: 8
+2022-12-07 14:55:20,351 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: defer
+2022-12-07 14:55:20,352 INFO    SenderThread:36578 [sender.py:send_request_defer():455] handle sender defer: 8
+2022-12-07 14:55:20,352 INFO    SenderThread:36578 [file_pusher.py:finish():171] shutting down file pusher
+2022-12-07 14:55:20,451 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-07 14:55:20,451 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: poll_exit
+2022-12-07 14:55:20,554 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-07 14:55:20,555 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: poll_exit
+2022-12-07 14:55:20,661 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-07 14:55:20,661 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: poll_exit
+2022-12-07 14:55:20,763 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-07 14:55:20,763 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: poll_exit
+2022-12-07 14:55:20,865 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-07 14:55:20,865 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: poll_exit
+2022-12-07 14:55:20,944 INFO    Thread-18 :36578 [upload_job.py:push():138] Uploaded file /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/files/wandb-summary.json
+2022-12-07 14:55:20,944 INFO    Thread-19 :36578 [upload_job.py:push():138] Uploaded file /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/files/requirements.txt
+2022-12-07 14:55:20,951 INFO    Thread-17 :36578 [upload_job.py:push():138] Uploaded file /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/files/config.yaml
+2022-12-07 14:55:20,967 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-07 14:55:20,967 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: poll_exit
+2022-12-07 14:55:20,985 INFO    Thread-20 :36578 [upload_job.py:push():138] Uploaded file /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/files/output.log
+2022-12-07 14:55:21,069 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-07 14:55:21,069 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: poll_exit
+2022-12-07 14:55:21,171 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-07 14:55:21,171 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: poll_exit
+2022-12-07 14:55:21,185 INFO    Thread-11 :36578 [sender.py:transition_state():459] send defer: 9
+2022-12-07 14:55:21,186 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: defer
+2022-12-07 14:55:21,186 INFO    HandlerThread:36578 [handler.py:handle_request_defer():164] handle defer: 9
+2022-12-07 14:55:21,187 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: defer
+2022-12-07 14:55:21,187 INFO    SenderThread:36578 [sender.py:send_request_defer():455] handle sender defer: 9
+2022-12-07 14:55:21,273 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-07 14:55:21,347 INFO    SenderThread:36578 [sender.py:transition_state():459] send defer: 10
+2022-12-07 14:55:21,348 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: poll_exit
+2022-12-07 14:55:21,348 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: defer
+2022-12-07 14:55:21,349 INFO    HandlerThread:36578 [handler.py:handle_request_defer():164] handle defer: 10
+2022-12-07 14:55:21,350 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: defer
+2022-12-07 14:55:21,351 INFO    SenderThread:36578 [sender.py:send_request_defer():455] handle sender defer: 10
+2022-12-07 14:55:21,351 INFO    SenderThread:36578 [sender.py:transition_state():459] send defer: 11
+2022-12-07 14:55:21,352 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: defer
+2022-12-07 14:55:21,352 DEBUG   SenderThread:36578 [sender.py:send():302] send: final
+2022-12-07 14:55:21,352 INFO    HandlerThread:36578 [handler.py:handle_request_defer():164] handle defer: 11
+2022-12-07 14:55:21,352 DEBUG   SenderThread:36578 [sender.py:send():302] send: footer
+2022-12-07 14:55:21,352 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: defer
+2022-12-07 14:55:21,352 INFO    SenderThread:36578 [sender.py:send_request_defer():455] handle sender defer: 11
+2022-12-07 14:55:21,450 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-07 14:55:21,450 DEBUG   SenderThread:36578 [sender.py:send_request():316] send_request: poll_exit
+2022-12-07 14:55:21,450 INFO    SenderThread:36578 [file_pusher.py:join():176] waiting for file pusher
+2022-12-07 14:55:21,937 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: sampled_history
+2022-12-07 14:55:21,938 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: get_summary
+2022-12-07 14:55:21,938 INFO    MainThread:36578 [wandb_run.py:_footer_history_summary_info():3305] rendering history
+2022-12-07 14:55:21,939 INFO    MainThread:36578 [wandb_run.py:_footer_history_summary_info():3337] rendering summary
+2022-12-07 14:55:21,939 INFO    MainThread:36578 [wandb_run.py:_footer_sync_info():3261] logging synced files
+2022-12-07 14:55:21,940 DEBUG   HandlerThread:36578 [handler.py:handle_request():141] handle_request: shutdown
+2022-12-07 14:55:21,940 INFO    HandlerThread:36578 [handler.py:finish():810] shutting down handler
+2022-12-07 14:55:22,352 INFO    WriterThread:36578 [datastore.py:close():279] close: /m/home/home4/44/korhonj19/unix/rl_course/Reinforcement_learning_project/wandb/run-20221207_145516-2jgheg1a/run-2jgheg1a.wandb
+2022-12-07 14:55:22,836 INFO    SenderThread:36578 [sender.py:finish():1312] shutting down sender
+2022-12-07 14:55:22,836 INFO    SenderThread:36578 [file_pusher.py:finish():171] shutting down file pusher
+2022-12-07 14:55:22,836 INFO    SenderThread:36578 [file_pusher.py:join():176] waiting for file pusher
+2022-12-07 14:55:22,942 INFO    MainThread:36578 [internal.py:handle_exit():80] Internal process exited

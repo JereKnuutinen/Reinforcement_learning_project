@@ -1,0 +1,21 @@
+
+{'ep': 0, 'logstd': array([[ 0.005,  0.005, -0.005]], dtype=float32), 'timesteps': 12, 'ep_reward': 8.5332573777117, 'episodes': 0}
+{'ep': 100, 'logstd': array([[-0.00295674, -0.02203907, -0.04363926]], dtype=float32), 'timesteps': 88, 'ep_reward': 104.50851844522629, 'episodes': 100}
+{'ep': 200, 'logstd': array([[-0.02219648, -0.04478463, -0.10578333]], dtype=float32), 'timesteps': 138, 'ep_reward': 166.17524436068206, 'episodes': 200}
+{'ep': 300, 'logstd': array([[-0.05006785, -0.09707979, -0.15612568]], dtype=float32), 'timesteps': 123, 'ep_reward': 202.88837356027238, 'episodes': 300}
+{'ep': 400, 'logstd': array([[-0.09706991, -0.08781282, -0.08919609]], dtype=float32), 'timesteps': 86, 'ep_reward': 126.51063623777554, 'episodes': 400}
+{'ep': 500, 'logstd': array([[-0.11362831, -0.0068044 , -0.13336723]], dtype=float32), 'timesteps': 101, 'ep_reward': 102.94821351118627, 'episodes': 500}
+{'ep': 600, 'logstd': array([[-0.17405176,  0.03076439, -0.12019777]], dtype=float32), 'timesteps': 103, 'ep_reward': 105.19476079241679, 'episodes': 600}
+{'ep': 700, 'logstd': array([[-0.25499466, -0.00484115, -0.12034316]], dtype=float32), 'timesteps': 79, 'ep_reward': 63.145685311190256, 'episodes': 700}
+{'ep': 800, 'logstd': array([[-0.2988598 , -0.0170056 , -0.15110314]], dtype=float32), 'timesteps': 50, 'ep_reward': 40.086024907209364, 'episodes': 800}
+{'ep': 900, 'logstd': array([[-0.36197367, -0.04242659, -0.13449979]], dtype=float32), 'timesteps': 105, 'ep_reward': 81.67638085921408, 'episodes': 900}
+{'ep': 1000, 'logstd': array([[-0.43606487, -0.1029918 , -0.24793573]], dtype=float32), 'timesteps': 190, 'ep_reward': 210.7290281265185, 'episodes': 1000}
+{'ep': 1100, 'logstd': array([[-0.47056913, -0.10945921, -0.2926342 ]], dtype=float32), 'timesteps': 12, 'ep_reward': 2.789777765254984, 'episodes': 1100}
+{'ep': 1200, 'logstd': array([[-0.48586002, -0.1440784 , -0.29952613]], dtype=float32), 'timesteps': 136, 'ep_reward': 72.36686043363608, 'episodes': 1200}
+{'ep': 1300, 'logstd': array([[-0.49410844, -0.27240855, -0.29039413]], dtype=float32), 'timesteps': 69, 'ep_reward': 48.53576700581063, 'episodes': 1300}
+{'ep': 1400, 'logstd': array([[-0.40770972, -0.295173  , -0.3478966 ]], dtype=float32), 'timesteps': 76, 'ep_reward': 110.86549067077907, 'episodes': 1400}
+{'ep': 1500, 'logstd': array([[-0.43939453, -0.37002143, -0.33770436]], dtype=float32), 'timesteps': 72, 'ep_reward': 52.570847325155654, 'episodes': 1500}
+{'ep': 1600, 'logstd': array([[-0.43865404, -0.40901253, -0.26724836]], dtype=float32), 'timesteps': 85, 'ep_reward': 129.10171434030462, 'episodes': 1600}
+{'ep': 1700, 'logstd': array([[-0.47697827, -0.4079369 , -0.2884673 ]], dtype=float32), 'timesteps': 111, 'ep_reward': 125.42771395258241, 'episodes': 1700}
+{'ep': 1800, 'logstd': array([[-0.43071657, -0.42849928, -0.18473332]], dtype=float32), 'timesteps': 19, 'ep_reward': -32.15924279323346, 'episodes': 1800}
+{'ep': 1900, 'logstd': array([[-0.31462154, -0.46158078, -0.24009036]], dtype=float32), 'timesteps': 23, 'ep_reward': -92.81053045956634, 'episodes': 1900}
