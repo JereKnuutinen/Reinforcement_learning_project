@@ -2,28 +2,24 @@ env_name: 'Hopper-v4'
 env_parameters:
   ctrl_cost_weight: 0.075
 
-# for ddpg (exercise 6)
+# from ddpg.yaml (exercise 6)
 agent_name: ddpg    
 
-train_episodes: 10000
+train_episodes: 5000
 gamma: 0.99
-actor_lr: 1e-4
-critic_lr: 1e-3
-tau: 1e-3
+lr: 3e-4
+tau: 0.005
 batch_size: 256
-buffer_size: 1e5
-#############
-
+buffer_size: 1e6
 
 seed: 408
-exp_name: hopper_medium
+exp_name: ex6
 run_id: ??? # decided during execution
-lr: 2e-4
 
 testing: false
 model_path: default
 
-save_video: true
+save_video: false
 save_logging: true
 save_model: true
 use_wandb: true

@@ -1,6 +1,7 @@
 import sys, os
 sys.path.insert(0, os.path.abspath(".."))
-os.environ["MUJOCO_GL"] = "egl" # for mujoco rendering
+#os.environ["MUJOCO_GL"] = "egl" # for mujoco rendering
+os.environ["MUJOCO_GL"]="glfw"
 import time
 from pathlib import Path
 
@@ -15,7 +16,7 @@ torch.autograd.set_detect_anomaly(True)
 
 from make_env import *
 from agents.pg_ac import PG
-from agents.ddpg_self_made import DDPG
+from agents.ddpg import DDPG
 from common import helper as h
 from common import logger as logger
 
@@ -87,8 +88,9 @@ def test(agent, env, num_episode=10):
     print("Average test reward:", total_test_reward/num_episode)
 
 
+env_name = "hopper_easy"
 # The main function
-@hydra.main(config_path='configs', config_name='hopper_medium')
+@hydra.main(config_path='configs', config_name=env_name)
 def main(cfg):
     # sed seed
     h.set_seed(cfg.seed)
@@ -113,9 +115,7 @@ def main(cfg):
                     config=cfg)
 
     # create a env
-    #env = gym.make(cfg.env_name)
-    #env.seed(cfg.seed)
-    env = create_env(config_file_name="hopper_medium", seed=cfg.seed)
+    env = create_env(config_file_name=env_name, seed=cfg.seed)
     if cfg.save_video:
         # During testing, save every episode
         if cfg.testing:
@@ -132,13 +132,73 @@ def main(cfg):
     state_shape = env.observation_space.shape
     action_dim = env.action_space.shape[0]
     max_action = env.action_space.high[0]
-
-    # init agent
-    if cfg.agent_name == "pg_ac":
-        agent = PG(state_shape[0], action_dim, cfg.lr, cfg.gamma)
-    else: # ddpg
+    
+    ## Automated HYPER PARAMETER OPTIMIZATION with grid search
+    do_hyperparameter_optimization = False
+    if do_hyperparameter_optimization:
+        network_architectures = [(400,300), (100,100)]
+        ac_lrs = [1e-4*0.8, 1e-4*0.9, 1e-4, 1e-4*1.1, 1e-4*1.2]
+        cr_lrs = [1e-3*0.8, 1e-3*0.9, 1e-3, 1e-3*1.1, 1e-3*1.2]
+        buffer_sizes = [1e6, 2e6]
+        batch_sizes = [256]
+        
+        best_mean_reward = 0
+        
+        best_settings = []
+        
+        for na in network_architectures:
+            for ac_lr in ac_lrs:
+                for cr_lr in cr_lrs:
+                    for buffer_sz in buffer_sizes:
+                        for batch_size in batch_sizes:
+                            print("Testing with settings", [na, ac_lr, cr_lr, buffer_sz, batch_size])
+                            # create agent with currently investigated settings
+                            agent = DDPG(state_shape, action_dim, max_action,
+                                                ac_lr, cr_lr, cfg.gamma, cfg.tau,
+                                                batch_size=int(batch_size), buffer_size=int(buffer_sz), network_architecture=na, use_ou=True)
+                            iter_count = 0
+                            mean_ep_reward = 0
+                            for ep in range(1000+1):
+                                train_info = train(agent, env)
+                                #print(train_info['ep_reward'])
+                                if (not cfg.silent) and (ep > 995):
+                                    print({"ep": ep, **train_info})
+                                    mean_ep_reward += train_info['ep_reward']
+                                    iter_count += 1
+                                
+                            mean_ep_reward /= iter_count
+                            print("mean 5 episode reward for, **train settings: na: ", na, " ac_lr: ", ac_lr, " cr_lr: ", cr_lr, " buffer_sz: ", buffer_sz, " batch_size: ", batch_size)
+                            print(mean_ep_reward)
+                            if best_mean_reward < mean_ep_reward:
+                                best_mean_reward = mean_ep_reward
+                                best_settings = [na, ac_lr, cr_lr, buffer_sz, batch_size]
+                            
+                            print("Best settings thus far: ", best_settings)
+    
+    
+    # Manual hyper parameter optimization, take inspiration from TD3
+    
+    # suggestion based on TD3 tricks
+    # Trick Two: “Delayed” Policy Updates. TD3 updates the policy (and target networks) less frequently than the Q-function.
+    # The paper recommends one policy update for every two Q-function updates -> critic lr = 2 * actor lr
+    
+    # Trick Three: Target Policy Smoothing. TD3 adds noise to the target action,
+    # to make it harder for the policy to exploit Q-function errors by smoothing out Q along changes in action. -> use_ou=True, adds noise (0 mean, 0.1 std) to action output
+                           
+    best_settings = {"network_architecture" : (400, 300), "actor_learning_rate" : 0.5 * 0.0003, "critic_learning_rate" : 0.0003, "buffer_size" : 2e6, "batch_size" : 256,
+                     "gamma" : 0.99, "tau" : 0.005, "use_output_action_noise" : True}
+    
+    print(best_settings)
+    agent = DDPG(state_shape, action_dim, max_action,
+                actor_lr=best_settings["actor_learning_rate"], critic_lr=best_settings["critic_learning_rate"], gamma=best_settings["gamma"], tau=best_settings["tau"],
+                batch_size=best_settings["batch_size"], buffer_size=best_settings["buffer_size"], network_architecture=best_settings["network_architecture"], use_ou=best_settings["use_output_action_noise"], ou_std = 0.2)
+    
+    use_default_from_ex_6 = False
+    
+    if(use_default_from_ex_6):
         agent = DDPG(state_shape, action_dim, max_action,
                     cfg.actor_lr, cfg.critic_lr, cfg.gamma, cfg.tau, batch_size=int(cfg.batch_size), buffer_size=int(cfg.buffer_size))
+    
 
     if not cfg.testing: # training
         for ep in range(cfg.train_episodes + 1):

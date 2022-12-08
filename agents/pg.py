@@ -22,6 +22,7 @@ class Policy(nn.Module):
     def __init__(self, state_dim, action_dim):
         super(Policy, self).__init__()
 
+        """
         # Initialise a neural network with two hidden layers (64 neurons per layer)
         self.actor_mean = nn.Sequential(
             layer_init(nn.Linear(state_dim, 64)),
@@ -30,11 +31,20 @@ class Policy(nn.Module):
             nn.Tanh(),
             layer_init(nn.Linear(64, action_dim), std=0.01),
         )
-
+        """
+        self.actor_mean = nn.Sequential(
+            layer_init(nn.Linear(state_dim, 64)),
+            nn.Tanh(),
+            layer_init(nn.Linear(64, 64)),
+            nn.Tanh(),
+            layer_init(nn.Linear(64, action_dim), std=0.01),
+        )
+        
+        
         # TODO: Task 1: Implement actor_logstd as a torch tensor
         # TODO: Task 2: Implement actor_logstd as a learnable parameter
         # Use log of std to make sure std doesn't become negative during training
-        self.actor_logstd = 0
+        self.actor_logstd = 0.1
         self.actor_logstd = torch.zeros(1, action_dim, device=device)
         self.actor_logstd = nn.Parameter(torch.zeros(1, action_dim))
 
@@ -63,7 +73,7 @@ class PG(object):
         self.policy = Policy(state_dim, action_dim).to(device)
 
         # Create an optimizer
-        self.optimizer = torch.optim.Adam(self.policy.parameters(), lr=lr, betas=0.9)
+        self.optimizer = torch.optim.Adam(self.policy.parameters(), lr=lr)
 
         # Set discount factor value
         self.gamma = gamma

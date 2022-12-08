@@ -9,18 +9,26 @@ from common import helper as h
 from common.buffer import ReplayBuffer
 
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
+#device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = "cpu"
 
 # Actor-critic agent
 class Policy(nn.Module):
-    def __init__(self, state_dim, action_dim, max_action):
+    def __init__(self, state_dim, action_dim, max_action, network_size):
         super().__init__()
         self.max_action = max_action
+        # default
+        """
         self.actor = nn.Sequential(
             nn.Linear(state_dim, 400), nn.ReLU(),
             nn.Linear(400, 300), nn.ReLU(),
             nn.Linear(300, action_dim)
+        )
+        """
+        self.actor = nn.Sequential(
+            nn.Linear(state_dim, network_size[0]), nn.ReLU(),
+            nn.Linear(network_size[0], network_size[1]), nn.ReLU(),
+            nn.Linear(network_size[1], action_dim)
         )
 
     def forward(self, state):
@@ -53,12 +61,14 @@ class DDPG(object):
             batch_size,
             use_ou=False,
             normalize=False,
-            buffer_size=1e6
+            network_architecture = (400, 300),
+            buffer_size=1e6,
+            ou_std = 0.1
     ):
         state_dim = state_shape[0]
         self.action_dim = action_dim
         self.max_action = max_action
-        self.pi = Policy(state_dim, action_dim, max_action).to(device)
+        self.pi = Policy(state_dim, action_dim, max_action, network_size=network_architecture).to(device)
         self.pi_target = copy.deepcopy(self.pi)
         self.pi_optim = torch.optim.Adam(self.pi.parameters(), lr=actor_lr)
 
@@ -73,7 +83,7 @@ class DDPG(object):
             self.state_scaler = None
 
         if use_ou:
-            self.noise = h.OUActionNoise(mu=np.zeros((action_dim,)))
+            self.noise = h.OUActionNoise(mu=np.zeros((action_dim,)), std_deviation=ou_std)
         else:
             self.noise = None
         
