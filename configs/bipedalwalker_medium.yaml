@@ -1,3 +1,33 @@
 env_name: 'BipedalWalker-v3'
 env_parameters:
   hardcore: true
+
+# from ddpg.yaml (exercise 6)
+agent_name: ddpg    
+
+train_episodes: 5000
+gamma: 0.99
+lr: 3e-4
+tau: 0.005
+batch_size: 256
+buffer_size: 1e6
+
+seed: 408
+exp_name: ex6
+run_id: ??? # decided during execution
+
+testing: false
+model_path: default
+
+save_video: false
+save_logging: true
+save_model: true
+use_wandb: true
+silent: false
+
+run_suffix: 0
+# ref: https://stackoverflow.com/questions/65104134/disable-file-output-of-hydra
+hydra:  
+    output_subdir: null  
+    run:  
+        dir: .

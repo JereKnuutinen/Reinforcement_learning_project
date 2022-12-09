@@ -10,7 +10,7 @@ from common.buffer import ReplayBuffer
 from torch.distributions import Normal
 
 #device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-device = torch.device('cuda')
+device = torch.device('cpu')
 
 # Actor-critic agent
 class Policy(nn.Module):
@@ -41,10 +41,11 @@ class Critic(nn.Module):
 
 
 class DDPG(object):
-    def __init__(self, state_shape, action_dim, max_action, lr, gamma, tau, batch_size, buffer_size=1e6):
+    def __init__(self, state_shape, action_dim, max_action, lr, gamma, tau, batch_size, buffer_size=1e6, action_noise=0.1):
         state_dim = state_shape[0]
         self.action_dim = action_dim
         self.max_action = max_action
+        self.action_noise = action_noise
         self.pi = Policy(state_dim, action_dim, max_action).to(device)
         self.pi_target = copy.deepcopy(self.pi)
         self.pi_optim = torch.optim.Adam(self.pi.parameters(), lr=lr)
@@ -121,7 +122,7 @@ class DDPG(object):
         if self.buffer_ptr < self.random_transition: # collect random trajectories for better exploration.
             action = torch.rand(self.action_dim)
         else:
-            expl_noise = 0.1 * self.max_action # the stddev of the expl_noise if not evaluation
+            expl_noise = self.action_noise * self.max_action # the stddev of the expl_noise if not evaluation
             
             # TODO: Task 2
             ########## Your code starts here. ##########

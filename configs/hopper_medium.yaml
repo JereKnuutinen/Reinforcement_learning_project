@@ -12,7 +12,7 @@ tau: 0.005
 batch_size: 256
 buffer_size: 1e6
 
-seed: 408
+seed: 508
 exp_name: ex6
 run_id: ??? # decided during execution
 

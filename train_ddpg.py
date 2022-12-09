@@ -1,9 +1,11 @@
 import sys, os
 sys.path.insert(0, os.path.abspath(".."))
-#os.environ["MUJOCO_GL"] = "egl" # for mujoco rendering
-os.environ["MUJOCO_GL"]="glfw"
+os.environ["MUJOCO_GL"] = "egl" # for mujoco rendering
+#os.environ["MUJOCO_GL"]="glfw"
 import time
 from pathlib import Path
+
+import mujoco_py
 
 import torch
 import gym
@@ -16,7 +18,7 @@ torch.autograd.set_detect_anomaly(True)
 
 from make_env import *
 from agents.pg_ac import PG
-from agents.ddpg import DDPG
+from agents.ddpg_self_made import DDPG
 from common import helper as h
 from common import logger as logger
 
@@ -88,7 +90,7 @@ def test(agent, env, num_episode=10):
     print("Average test reward:", total_test_reward/num_episode)
 
 
-env_name = "hopper_easy"
+env_name = "hopper_medium"
 # The main function
 @hydra.main(config_path='configs', config_name=env_name)
 def main(cfg):
@@ -184,20 +186,22 @@ def main(cfg):
     
     # Trick Three: Target Policy Smoothing. TD3 adds noise to the target action,
     # to make it harder for the policy to exploit Q-function errors by smoothing out Q along changes in action. -> use_ou=True, adds noise (0 mean, 0.1 std) to action output
-                           
-    best_settings = {"network_architecture" : (400, 300), "actor_learning_rate" : 0.5 * 0.0003, "critic_learning_rate" : 0.0003, "buffer_size" : 2e6, "batch_size" : 256,
-                     "gamma" : 0.99, "tau" : 0.005, "use_output_action_noise" : True}
+    manual_hp_optimization = False        
+    if(manual_hp_optimization):
     
-    print(best_settings)
-    agent = DDPG(state_shape, action_dim, max_action,
-                actor_lr=best_settings["actor_learning_rate"], critic_lr=best_settings["critic_learning_rate"], gamma=best_settings["gamma"], tau=best_settings["tau"],
-                batch_size=best_settings["batch_size"], buffer_size=best_settings["buffer_size"], network_architecture=best_settings["network_architecture"], use_ou=best_settings["use_output_action_noise"], ou_std = 0.2)
-    
-    use_default_from_ex_6 = False
+        best_settings = {"network_architecture" : (400, 300), "actor_learning_rate" : 0.5 * 0.0003, "critic_learning_rate" : 0.0003, "buffer_size" : 2e6, "batch_size" : 256,
+                        "gamma" : 0.99, "tau" : 0.005, "use_output_action_noise" : True}
+        
+        print(best_settings)
+        agent = DDPG(state_shape, action_dim, max_action,
+                    actor_lr=best_settings["actor_learning_rate"], critic_lr=best_settings["critic_learning_rate"], gamma=best_settings["gamma"], tau=best_settings["tau"],
+                    batch_size=best_settings["batch_size"], buffer_size=best_settings["buffer_size"], network_architecture=best_settings["network_architecture"], use_ou=best_settings["use_output_action_noise"], ou_std = 0.2)
+        
+    use_default_from_ex_6 = True
     
     if(use_default_from_ex_6):
-        agent = DDPG(state_shape, action_dim, max_action,
-                    cfg.actor_lr, cfg.critic_lr, cfg.gamma, cfg.tau, batch_size=int(cfg.batch_size), buffer_size=int(cfg.buffer_size))
+        agent = DDPG(state_shape, action_dim, max_action, cfg.lr, cfg.gamma, cfg.tau, batch_size=int(cfg.batch_size), buffer_size=int(cfg.buffer_size))
+        #agent = DDPG(state_shape, action_dim, max_action, cfg.lr, cfg.gamma, cfg.tau, batch_size=int(cfg.batch_size), buffer_size=2*int(cfg.buffer_size), action_noise=0.2)
     
 
     if not cfg.testing: # training
