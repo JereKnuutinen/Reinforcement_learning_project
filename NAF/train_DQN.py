@@ -89,7 +89,7 @@ def main(cfg):
             #if ep >= cfg.random_episodes:
             update_info = agent.update(buffer)
             #else: update_info = {}
-            #agent.policy_net.train(False)
+            agent.policy_net.train(False)
 
         info = {'episode': ep, 'ep_reward': ep_reward}
         info.update(update_info)
