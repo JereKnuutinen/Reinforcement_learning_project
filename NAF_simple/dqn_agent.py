@@ -11,7 +11,6 @@ import random
 import copy
 sys.path.insert(0, os.path.abspath("../.."))
 from common import helper as h
-from torch.distributions import MultivariateNormal
 
 #device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 device = torch.device('cpu')
@@ -25,16 +24,16 @@ class NAF(nn.Module):
         combined_size = state_shape + hidden_dims
         # layer 1
         self.l1 = nn.Linear(in_features = state_shape, out_features = hidden_dims)
-        self.bn1 = nn.BatchNorm1d(hidden_dims)
+        #self.bn1 = nn.BatchNorm1d(hidden_dims)
         # layer 2
-        self.l2 = nn.Linear(combined_size, hidden_dims)
-        self.bn2 = nn.BatchNorm1d(hidden_dims)
+        self.l2 = nn.Linear(hidden_dims, hidden_dims)
+        #self.bn2 = nn.BatchNorm1d(hidden_dims)
         # layer 3
-        self.l3 = nn.Linear(combined_size, hidden_dims)
-        self.bn3 = nn.BatchNorm1d(hidden_dims)
+        #self.l3 = nn.Linear(combined_size, hidden_dims)
+        #self.bn3 = nn.BatchNorm1d(hidden_dims)
         # layer 4
-        self.l4 = nn.Linear(combined_size, hidden_dims)
-        self.bn4 = nn.BatchNorm1d(hidden_dims)        
+        #self.l4 = nn.Linear(combined_size, hidden_dims)
+        #self.bn4 = nn.BatchNorm1d(hidden_dims)        
         # layer 1-4 are shared with all the heads
         # heads:
         # mu : maximum action, apply Tanh in forward
@@ -56,45 +55,36 @@ class NAF(nn.Module):
         # base layers feedforward
         # sometimes state [1x11] and sometimes [256x11]
         x = torch.relu(self.l1(state))
-        x = self.bn1(x)
-        x = torch.relu(self.l2(torch.cat([x, state], dim=1)))
-        x = self.bn2(x)
-        x = torch.relu(self.l3(torch.cat([x, state], dim=1)))
-        x = self.bn3(x)
-        x = torch.relu(self.l4(torch.cat([x, state], dim=1)))
-        x = self.bn4(x)
+        x = torch.relu(self.l2(x))
+        
         # maximum action
         mu = torch.tanh(self.mu(x))
-        action_value = mu.unsqueeze(-1)
-        
+
         l_entries = torch.tanh(self.L_entries(x))
         
         Value = self.V(x)
         # create lower triangular matrix L
         #L = torch.zeros((self.state_dim, self.action_size, self.action_size))
-        L = torch.zeros((state.shape[0], self.action_size, self.action_size)).to(device)
+        L = torch.zeros((state.shape[0], self.action_size, self.action_size))
         triang_indices = torch.tril_indices(row=self.action_size, col=self.action_size, offset=0)
         L[:, triang_indices[0], triang_indices[1]] = l_entries
-        L.diagonal(dim1=1,dim2=2).exp_() # exponentiate diagonal elements
+        L.diagonal(1,2).exp_() # exponentiate diagonal elements
         
-        P = L*L.transpose(2, 1) #P = L @ L.transpose(1, 2) # or : P = L * L.transpose
+        P = L * torch.transpose(L, 2, 1) # or : P = L * L.transpose
         
         Advantage = None
         Q = None        
         if action!=None:
-            #a1 = (action - mu).unsqueeze(1)
-            #a2 = (action - mu).unsqueeze(-1)
-            #Advantage = (-0.5 * a1 @ P @ a2).squeeze(-1)
-            Advantage = (-0.5 * torch.matmul(torch.matmul((action.unsqueeze(-1) - action_value).transpose(2, 1), P), (action.unsqueeze(-1) - action_value))).squeeze(-1)
+            a1 = (action - mu).unsqueeze(1)
+            a2 = (action - mu).unsqueeze(-1)
+            Advantage = (-0.5 * a1 @ P @ a2).squeeze(-1)
             #A = (-0.5 * torch.matmul(torch.matmul((action.unsqueeze(-1) - mu).transpose(2, 1), P), (action.unsqueeze(-1) - mu))).squeeze(-1)
             Q = Advantage + Value
         
         # sample action
         new_action = torch.distributions.MultivariateNormal(mu.squeeze(-1), torch.inverse(P)).sample()
-        new_action = torch.distributions.MultivariateNormal(mu, P.inverse()).sample()
-        new_action = new_action.clamp(-1, 1)
-        
-    
+        #new_action = torch.distributions.MultivariateNormal(mu, P.inverse()).sample()
+        new_action = new_action.clamp(min_action, max_action)
         
         return mu, Q, new_action, Advantage, Value
         
@@ -130,7 +120,7 @@ class DQNAgent(object):
             mu_t, Q_t, new_action_t, Advantage_t, Value_t = self.target_net(batch.next_state)
             V_target = batch.reward + (self.gamma * Value_t * batch.not_done)
 
-        loss = F.mse_loss(Q, V_target)
+        loss = F.smooth_l1_loss(Q, V_target)
         self.optimizer.zero_grad()
         loss.backward()
         # clip grad norm
@@ -148,12 +138,10 @@ class DQNAgent(object):
     def get_action(self, state):
         # TODO:  Task 3: implement epsilon-greedy action selection
         ########## You code starts here #########
-        self.policy_net.eval()
         if state.ndim == 1:
             state = state[None] # add batch dimension
         state = torch.tensor(state, ).to(torch.float32).to(device) # conver state to tensor and put it to device
         _, _, new_action, _, _ = self.policy_net(state)
-        self.policy_net.train()
         return new_action
 
 
