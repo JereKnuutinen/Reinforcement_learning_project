@@ -5,7 +5,7 @@ env_parameters:
 # from ddpg.yaml (exercise 6)
 agent_name: ddpg    
 
-train_episodes: 5000
+train_episodes: 3000
 gamma: 0.99
 lr: 3e-4
 tau: 0.005

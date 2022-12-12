@@ -9,8 +9,8 @@ from common import helper as h
 from common.buffer import ReplayBuffer
 from torch.distributions import Normal
 
-#device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-device = torch.device('cpu')
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+#device = torch.device('cpu')
 
 # Actor-critic agent
 class Policy(nn.Module):

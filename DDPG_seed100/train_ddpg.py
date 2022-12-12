@@ -1,5 +1,5 @@
 import sys, os
-sys.path.insert(0, os.path.abspath(".."))
+sys.path.insert(0, os.path.abspath("../.."))
 os.environ["MUJOCO_GL"] = "egl" # for mujoco rendering
 #os.environ["MUJOCO_GL"]="glfw"
 import time
@@ -17,7 +17,6 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 torch.autograd.set_detect_anomaly(True)
 
 from make_env import *
-from agents.pg_ac import PG
 from ddpg_self_made import DDPG
 from common import helper as h
 from common import logger as logger
@@ -41,10 +40,7 @@ def train(agent, env, max_episode_steps=1000):
         next_obs, reward, done, _ = env.step(to_numpy(action))
 
         # Store action's outcome (so that the agent can improve its policy)
-        if isinstance(agent, PG):
-            done_bool = done
-            agent.record(obs, act_logprob, reward, done_bool, next_obs)
-        elif isinstance(agent, DDPG):
+        if isinstance(agent, DDPG):
             # ignore the time truncated terminal signal
             done_bool = float(done) if episode_timesteps < max_episode_steps else 0 
             agent.record(obs, action, next_obs, reward, done_bool)
@@ -204,17 +200,32 @@ def main(cfg):
         agent = DDPG(state_shape, action_dim, max_action, cfg.lr, cfg.gamma, cfg.tau, batch_size=int(cfg.batch_size), buffer_size=2*int(cfg.buffer_size), action_noise=0.20)
     
 
+    running_mean = 0
+    mean_iter = 0
+
     if not cfg.testing: # training
         for ep in range(cfg.train_episodes + 1):
             # collect data and update the policy
             train_info = train(agent, env)
-
             if cfg.use_wandb:
                 wandb.log(train_info)
             if cfg.save_logging:
                 L.log(**train_info)
-            if (not cfg.silent) and (ep % 100 == 0):
+            if ( (ep+1) % 100 == 0):
+                print("Checkpoint save: ")
+                agent.save(cfg.model_path)
                 print({"ep": ep, **train_info})
+                mean_100 = running_mean / mean_iter
+                print("Mean episode reward for last 100 episodes: ", mean_100)
+                if(mean_100 > 2000):
+                    print("Early stopping condition fulfilled")
+                    break
+                # zero counters
+                running_mean = 0
+                mean_iter = 0
+                
+            running_mean += train_info["ep_reward"]
+            mean_iter += 1
 
         
         if cfg.save_model:
