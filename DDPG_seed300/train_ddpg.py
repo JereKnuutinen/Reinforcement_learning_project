@@ -5,7 +5,7 @@ os.environ["MUJOCO_GL"] = "egl" # for mujoco rendering
 import time
 from pathlib import Path
 
-import mujoco_py
+
 
 import torch
 import gym

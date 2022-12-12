@@ -1,11 +1,11 @@
 import sys, os
-sys.path.insert(0, os.path.abspath(".."))
+sys.path.insert(0, os.path.abspath("../.."))
 os.environ["MUJOCO_GL"] = "egl" # for mujoco rendering
 #os.environ["MUJOCO_GL"]="glfw"
 import time
 from pathlib import Path
 
-import mujoco_py
+
 
 import torch
 import gym
