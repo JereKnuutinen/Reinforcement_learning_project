@@ -76,25 +76,21 @@ class NAF(nn.Module):
         triang_indices = torch.tril_indices(row=self.action_size, col=self.action_size, offset=0)
         L[:, triang_indices[0], triang_indices[1]] = l_entries
         L.diagonal(dim1=1,dim2=2).exp_() # exponentiate diagonal elements
-        
-        P = L*L.transpose(2, 1) #P = L @ L.transpose(1, 2) # or : P = L * L.transpose
+        # How does this work?
+        P = L * L.transpose(2, 1) 
+        # But not this?
+        #P = L @ L.transpose(1, 2) 
         
         Advantage = None
         Q = None        
         if action!=None:
-            #a1 = (action - mu).unsqueeze(1)
-            #a2 = (action - mu).unsqueeze(-1)
-            #Advantage = (-0.5 * a1 @ P @ a2).squeeze(-1)
-            Advantage = (-0.5 * torch.matmul(torch.matmul((action.unsqueeze(-1) - action_value).transpose(2, 1), P), (action.unsqueeze(-1) - action_value))).squeeze(-1)
-            #A = (-0.5 * torch.matmul(torch.matmul((action.unsqueeze(-1) - mu).transpose(2, 1), P), (action.unsqueeze(-1) - mu))).squeeze(-1)
+            Advantage = (-0.5 * (action.unsqueeze(-1) - action_value).transpose(2, 1) @ P @ (action.unsqueeze(-1) - action_value)).squeeze(-1)
             Q = Advantage + Value
         
-        # sample action
+        # sample action with noise
         new_action = torch.distributions.MultivariateNormal(mu.squeeze(-1), torch.inverse(P)).sample()
         new_action = torch.distributions.MultivariateNormal(mu, P.inverse()).sample()
         new_action = new_action.clamp(-1, 1)
-        
-    
         
         return mu, Q, new_action, Advantage, Value
         
