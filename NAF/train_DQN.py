@@ -19,7 +19,7 @@ from common.buffer import ReplayBuffer
 from NAF.make_env import *
 
 def to_numpy(tensor):
-    return tensor.squeeze(0).cpu().numpy()
+    return np.float32(tensor.squeeze(0).cpu().numpy())
 
 
 env_name = "hopper_medium"
@@ -64,18 +64,17 @@ def main(cfg):
     buffer = ReplayBuffer(state_shape, action_dim=action_dims, max_size=int(cfg.buffer_size))
     for ep in range(cfg.train_episodes):
         state, done, ep_reward, env_step = env.reset(), False, 0, 0
-        eps = max(cfg.glie_b/(cfg.glie_b + ep), 0.05)
+        #eps = max(cfg.glie_b/(cfg.glie_b + ep), 0.05)
         # collecting data and fed into replay buffer
         while not done:
-            env_step += 1
-            if ep < cfg.random_episodes: # in the first #random_episodes, collect random trajectories
-                action = env.action_space.sample()
-            else:
-                # Select and perform an action
-                #state = agent.featurize(state)
-                action = agent.get_action(state)
-                if isinstance(action, np.ndarray): action = action.item()
-            
+            #env_step += 1
+            #if ep < cfg.random_episodes: # in the first #random_episodes, collect random trajectories
+            #    action = env.action_space.sample()
+            #else:
+            #    # Select and perform an action
+            #    #state = agent.featurize(state)
+            action = agent.get_action(state)
+            if isinstance(action, np.ndarray): action = np.float32(action.item())
             # bring to cpu in numpy format
             if not isinstance(action, np.ndarray): action = to_numpy(action)
             next_state, reward, done, _ = env.step(action)
@@ -87,10 +86,10 @@ def main(cfg):
             # with batch input, set the batch normalization layers to learning mode
             agent.policy_net.train(True)
             # Perform one update_per_episode step of the optimization
-            if ep >= cfg.random_episodes:
-                update_info = agent.update(buffer)
-            else: update_info = {}
-            agent.policy_net.train(False)
+            #if ep >= cfg.random_episodes:
+            update_info = agent.update(buffer)
+            #else: update_info = {}
+            #agent.policy_net.train(False)
 
         info = {'episode': ep, 'ep_reward': ep_reward}
         info.update(update_info)
