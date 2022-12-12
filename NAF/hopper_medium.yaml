@@ -3,16 +3,16 @@ env_parameters:
   ctrl_cost_weight: 0.075
 
 # from ddpg.yaml (exercise 6)
-agent_name: ddpg    
+agent_name: NAF  
 
 train_episodes: 5000
 gamma: 0.99
-lr: 3e-4
+lr: 1e-3
 tau: 0.005
 batch_size: 256
 buffer_size: 1e6
 
-seed: 608
+seed: 408
 exp_name: ex6
 run_id: ??? # decided during execution
 
@@ -26,10 +26,10 @@ use_wandb: true
 silent: false
 
 max_episode_steps: 1000
-grad_clip_norm: 1
+grad_clip_norm: 1.0
 random_episodes: 10
 
-hidden_dims: [64, 64]
+hidden_dims: 256
 glie_b: 200
 
 run_suffix: 0

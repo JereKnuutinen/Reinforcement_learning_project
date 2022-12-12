@@ -1,8 +1,7 @@
 import gym
 import numpy as np
 from matplotlib import pyplot as plt
-from dqn_agent import DQNAgent
-from rbf_agent import RBFAgent
+from dqn_agent import *
 import torch
 import tqdm
 import time
@@ -13,16 +12,21 @@ import warnings
 warnings.filterwarnings("ignore", category=UserWarning) 
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
+sys.path.insert(0, os.path.abspath("../.."))
 from common import helper as h
 from common import logger as logger
 from common.buffer import ReplayBuffer
+from NAF.make_env import *
+
+def to_numpy(tensor):
+    return tensor.squeeze(0).cpu().numpy()
 
 
-@hydra.main(config_path='cfg', config_name='ex4_cfg')
+env_name = "hopper_medium"
+@hydra.main(config_path='.', config_name=env_name)
 def main(cfg):
     # set random seed
     h.set_seed(cfg.seed)
-
     cfg.run_id = int(time.time())
     # create folders if needed
     work_dir = Path().cwd()/'results'/cfg.env_name
@@ -42,32 +46,25 @@ def main(cfg):
                     config=cfg)
     
     # create env
-    env = gym.make(cfg.env_name, render_mode='rgb_array' if cfg.save_video else None, max_episode_steps=cfg.max_episode_steps)
+    #env = gym.make(cfg.env_name, render_mode='rgb_array' if cfg.save_video else None, max_episode_steps=cfg.max_episode_steps)
+    env = create_env(config_file_name=env_name, seed=cfg.seed)
     env.seed(cfg.seed)
     if cfg.save_video:
         env = gym.wrappers.RecordVideo(env, work_dir/'video'/'train',
                                         episode_trigger=lambda x: x % 100 == 0,
                                         name_prefix=cfg.exp_name) # save video for every 100 episodes
-    # get number of actions and state dimensions
-    n_actions = env.action_space.n
+    # get action and state dimensions
+    action_dims = env.action_space.shape[0]
     state_shape = env.observation_space.shape
-
     # init agent
-    if cfg.agent_name == "dqn":
-        agent = DQNAgent(state_shape, n_actions, batch_size=cfg.batch_size, hidden_dims=cfg.hidden_dims,
+    agent = DQNAgent(state_shape, action_dims, batch_size=cfg.batch_size, hidden_dims=cfg.hidden_dims,
                          gamma=cfg.gamma, lr=cfg.lr, tau=cfg.tau)
-    elif cfg.agent_name == "rbf":
-        agent = RBFAgent(n_actions, gamma=cfg.gamma, batch_size=cfg.batch_size)
-    else:
-        raise ValueError(f"No {cfg.agent_name} agent implemented")
-
+    agent.policy_net.train(False)
     #  init buffer
-    buffer = ReplayBuffer(state_shape, action_dim=1, max_size=int(cfg.buffer_size))
-
+    buffer = ReplayBuffer(state_shape, action_dim=action_dims, max_size=int(cfg.buffer_size))
     for ep in range(cfg.train_episodes):
         state, done, ep_reward, env_step = env.reset(), False, 0, 0
         eps = max(cfg.glie_b/(cfg.glie_b + ep), 0.05)
-
         # collecting data and fed into replay buffer
         while not done:
             env_step += 1
@@ -76,29 +73,34 @@ def main(cfg):
             else:
                 # Select and perform an action
                 #state = agent.featurize(state)
-                action = agent.get_action(state, eps)
+                action = agent.get_action(state)
                 if isinstance(action, np.ndarray): action = action.item()
-                
+            
+            # bring to cpu in numpy format
+            if not isinstance(action, np.ndarray): action = to_numpy(action)
             next_state, reward, done, _ = env.step(action)
             ep_reward += reward
-
             # Store the transition in replay buffer
             buffer.add(state, action, next_state, reward, done)
-
             # Move to the next state
             state = next_state
-        
+            # with batch input, set the batch normalization layers to learning mode
+            agent.policy_net.train(True)
             # Perform one update_per_episode step of the optimization
             if ep >= cfg.random_episodes:
                 update_info = agent.update(buffer)
             else: update_info = {}
+            agent.policy_net.train(False)
 
-        info = {'episode': ep, 'epsilon': eps, 'ep_reward': ep_reward}
+        info = {'episode': ep, 'ep_reward': ep_reward}
         info.update(update_info)
 
         if cfg.use_wandb: wandb.log(info)
         if cfg.save_logging: L.log(**info)
-        if (not cfg.silent) and (ep % 100 == 0): print(info)
+        if (not cfg.silent) and (ep % 100 == 0):
+            print(info)
+            print("Saving checkpoint to: ", model_path)
+            agent.save(model_path)
 
     # save model and logging    
     if cfg.save_model:

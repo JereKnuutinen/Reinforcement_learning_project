@@ -18,7 +18,7 @@ torch.autograd.set_detect_anomaly(True)
 
 from make_env import *
 from agents.pg_ac import PG
-from agents.ddpg_self_made import DDPG
+from ddpg_self_made import DDPG
 from common import helper as h
 from common import logger as logger
 
@@ -92,7 +92,7 @@ def test(agent, env, num_episode=10):
 
 env_name = "hopper_medium"
 # The main function
-@hydra.main(config_path='configs', config_name=env_name)
+@hydra.main(config_path='.', config_name=env_name)
 def main(cfg):
     # sed seed
     h.set_seed(cfg.seed)
@@ -200,8 +200,8 @@ def main(cfg):
     use_default_from_ex_6 = True
     
     if(use_default_from_ex_6):
-        agent = DDPG(state_shape, action_dim, max_action, cfg.lr, cfg.gamma, cfg.tau, batch_size=int(cfg.batch_size), buffer_size=int(cfg.buffer_size))
-        #agent = DDPG(state_shape, action_dim, max_action, cfg.lr, cfg.gamma, cfg.tau, batch_size=int(cfg.batch_size), buffer_size=2*int(cfg.buffer_size), action_noise=0.2)
+        #agent = DDPG(state_shape, action_dim, max_action, cfg.lr, cfg.gamma, cfg.tau, batch_size=int(cfg.batch_size), buffer_size=int(cfg.buffer_size))
+        agent = DDPG(state_shape, action_dim, max_action, cfg.lr, cfg.gamma, cfg.tau, batch_size=int(cfg.batch_size), buffer_size=2*int(cfg.buffer_size), action_noise=0.20)
     
 
     if not cfg.testing: # training
